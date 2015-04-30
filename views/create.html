@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="subgrid">
+    <form class="col s12" ng-submit="createOutreach()">
+      <div class="row">
+        <div class="col m6 s12">
+          <div class="input-field col s12">
+            <input id="site_name" type="text" class="validate" ng-model="create.title">
+            <label for="site_name">Site Name</label>
+          </div>
+
+          <div class="input-field col s12">
+            <label class="label-date">Date</label>
+            <input type="date" ng-model="create.date">
+          </div>
+
+          <div class="input-field col s12">
+            <label class="label-date">Start Time</label>
+            <input type="time" ng-model="create.start">
+          </div>
+
+          <div class="input-field col s12">
+            <label class="label-date">End Time</label>
+            <input type="time" ng-model="create.end">
+          </div>
+
+          <div class="input-field col s12">
+            <textarea name="description" id="descript" class="materialize-textarea" length="120" ng-model="create.description"></textarea>
+            <label for="descript">Description</label>
+          </div>
+
+        </div>
+        <div class="col m6 s12 second-column">
+
+          <div class="input-field col s12">
+            <select class="browser-default" ng-model="create.driver" ng-options="user.id as user.name for user in users | filter:{driver:'true'}">
+              <option value="" disabled selected>Choose a driver</option>
+              
+            </select>
+            
+          </div>
+
+          <div class="input-field col s12">
+            <p class="range-field">
+              <label class="label-range">Maximum # Counselors</label>
+              <input type="range" value="2" id="num_counselors" min="0" max="10" ng-model="create.num_counselor"/>
+            </p>
+          </div>
+
+          <div class="input-field col s12">
+            <p class="range-field">
+              <label class="label-range">Maximum # Outreach Workers</label>
+              <input type="range" value="3" id="num_outreach" min="0" max="10" ng-model="create.num_outreach" />
+            </p>
+          </div>
+          <br>
+          <br>
+          <button type="submit" class="waves-effect waves-light-green btn-flat btn-create-send">Create&nbsp;<i class="mdi-content-send right"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <form>
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th data-field="id">Name</th>
+          <th data-field="email">Email</th>
+          <th data-field="phone">Phone Number</th>
+          <th data-field="outreach">Outreach</th>
+          <th data-field="counselor">Counselor</th>
+          <th data-field="driver">Driver</th>
+          <th data-field="admin">Admin</th>
+        </tr>
+      </thead>
+     
+      <tbody>
+        <tr ng-repeat = "user in users">
+          <td>
+            <img ng-src="{{user.gravatar}}" class="circle responsive-img gravatar"/>
+            {{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{isOutreach(user.id)}}</td>
+          <td>
+            <input type="checkbox" id="{{user.id}}outreach" ng-checked="{{user.outreach}}" ng-click="outreachChange(user.id)" />
+            <label for="{{user.id}}outreach" class="outreach_check"></label>
+          </td>
+          <td>
+            <input type="checkbox" id="{{user.id}}counselor" ng-checked="{{user.counselor}}" ng-click="counselorChange(user.id)" />
+            <label for="{{user.id}}counselor" class="outreach_check"></label>
+          </td>
+          <td>
+            <input type="checkbox" id="{{user.id}}driver" ng-checked="{{user.driver}}" ng-click="driverChange(user.id)" />
+            <label for="{{user.id}}driver" class="outreach_check"></label>
+          </td>
+          <td>
+            <input type="checkbox" id="{{user.id}}admin" ng-checked="{{user.admin}}" ng-click="adminChange(user.id)" />
+            <label for="{{user.id}}admin" class="outreach_check"></label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </form>
+  </div>
+</div>

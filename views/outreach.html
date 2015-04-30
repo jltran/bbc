@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m8 top-and-bottom-buffer">
+      <h3 class="header">Logistics</h3>
+      
+      <div class="display-indent">
+        <i class="mdi-device-access-time"></i>
+        <span>{{outreach.start | date: 'EEE, M/d/yy h:mm a'}} - {{outreach.end | date: 'h:mm a'}}</span>
+        <p class="location">Generally, we meet at the clinic at the time specified ({{outreach.start_time | date: 'h:mm a'}} pack up our things to leave for outreach. Please arrive on time to help. If there are any questions on the process, please contact the shift point.</p>
+      </div>
+      
+      <h3 class="header">Description</h3>
+      <div class="display-indent">
+        <p class="location">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti quibusdam vero dolor sequi. Culpa quis, animi consequatur harum, commodi inventore autem optio necessitatibus quod unde?</p>
+      </div>
+      
+      <h3 class="header">People</h3>
+        <div class="display-indent people-indent">
+          <div class="person-container clearfix">
+            <div class="col s3">
+              <span class="light">driver:</span>
+            </div>
+            <div class="col s4">
+              <img ng-src="{{outreach.driver.gravatar}}" class="circle responsive-img gravatar"/>
+              <span class="user-name">{{outreach.driver.name}}</span>
+            </div>
+          </div>
+    
+          <div class="person-container clearfix" ng-repeat="counselor in outreach.counselors">
+            <div class="col s3">
+              <span class="light">counselor:</span>
+            </div>
+            <div class="col s4">
+              <img ng-src="{{counselor.gravatar}}" class="circle responsive-img gravatar"/>
+              <span class="user-name">{{counselor.name}}</span>
+            </div>
+          </div>
+          
+          <!-- Display if still need counselors -->
+          <div class="person-container clearfix" ng-show="sufficientCounselors(outreach.counselors,outreach.num_counselor)">
+            <div class="col s3">
+              <span class="light">counselor:</span>
+            </div>
+            <div class="col s4">
+              <a class="waves-effect waves-light btn red darken-4" ng-click="counselorSignUp(outreach)"><i class="mdi-file-cloud left"></i>Sign Up!</a>
+            </div>
+          </div>  
+
+          <div class="person-container clearfix" ng-repeat="worker in outreach.outreachworkers">
+            <div class="col s3">
+              <span class="light">outreach worker:</span>
+            </div>
+            <div class="col s4">
+              <img ng-src="{{worker.gravatar}}" class="circle responsive-img gravatar"/>
+              <span class="user-name">{{worker.name}}</span>
+            </div>
+          </div>
+          
+          <div class="person-container clearfix" ng-show="sufficientWorkers(outreach.outreachworkers,outreach.num_outreach)">
+            <div class="col s3">
+              <span class="light">outreach worker:</span>
+            </div>
+            <div class="col s4">
+              <a class="waves-effect waves-light btn" ng-click="outreachworkerSignUp(outreach)"><i class="mdi-action-face-unlock left"></i>Sign Up!</a>
+            </div>
+          </div>
+    </div>
+    
+    <!-- Comments -->
+    <h3 class="header clearfix comment-margin">Comments</h3>
+
+    <div class="display-indent">
+
+    </div>  
+    
+  </div>
+</div>
+</div>

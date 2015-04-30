@@ -1,0 +1,23 @@
+<!-- Outreach List -->
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="input-field col s12">
+        <input id="search" type="search" ng-model="searchTab" required>
+        <label for="search"><i class="mdi-action-search"></i></label>
+        <i class="mdi-navigation-close"></i>
+      </div>
+      <div class="collection" ng-repeat="outreach in outreaches | filter:searchTab">
+        <a href="#/outreach/{{outreach.$id}}" class="collection-item">
+          <span>{{outreach.title}}</span>
+          <br>
+          <i class="mdi-device-access-time"></i>&nbsp;<small class="thin">{{outreach.start | date: 'EEE, M/d/yy h:mm a'}} - {{outreach.end | date: 'h:mm a'}}</small>
+          <div class="payment">
+            <i ng-repeat="i in range(outreach.num_outreach - outreach.outreachworkers.length) track by $index" class="mdi-action-face-unlock small"></i>
+            <i ng-repeat="i in range(outreach.num_counselor - outreach.counselors.length) track by $index" class="mdi-file-cloud small" style="color:#e51c23"></i>
+          </div>
+        </a>
+      </div>
+    </form>
+</div>
+</div>

@@ -1,0 +1,123 @@
+.outreach{
+  margin-top: 70px;
+  margin-left: 50px;
+}
+.gravatar{
+  width: 30px;
+  margin-right: 8px;
+  position: relative;
+  top: 8px;
+}
+.top-nav{
+  height:122px;
+  box-shadow:none;
+}
+.side-logo{
+  position: absolute;
+  line-height:122px;
+  bottom: 150px;
+  width: 240px;
+}
+.login{
+  margin-top: 50px;
+}
+.payment{
+  float: right;
+  margin-top: 0;  
+  text-align: center;
+  line-height: 0px;
+}
+.create-btn{
+  position: absolute;
+  top:94px;
+  right:40px;
+}
+.input-field label.label-date{
+  color: $input-border-color;
+  position: absolute;
+  top: -0.8rem;
+  left: $gutter-width / 2;
+  font-size: 1rem;
+}
+.input-field label.label-range{
+  color: $input-border-color;
+  position: absolute;
+  top: -1.75rem;
+  left: 0;
+  //left: $gutter-width / 2;
+  font-size: 1rem;
+}
+.btn-create-send{
+  float: right;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+
+//Create
+.subgrid {
+  margin: 30px;
+}
+
+.create-title{
+  @media only screen and (min-width: $medium-screen) {
+    float: right;
+    margin: 40px 0px 40px 40px;
+  }
+  margin: 0 auto;
+}
+
+//Display
+.top-and-bottom-buffer {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.display-indent {
+  @media only screen and (min-width: $medium-screen) {
+    margin-left: 50px;
+  }
+  margin-left: 10px; 
+}
+
+.people-indent {
+  margin-top: -10px;
+}
+
+.user-name{
+  margin-left: 10px;
+  position: absolute
+}
+
+.header {
+  color: $primary-color;
+  font-weight: 300;
+}
+
+.location {
+  position: relative; 
+  margin-left: 19px;
+  margin-top: 7px;
+}
+
+.person-container {
+  line-height: 60px;
+  display: block;
+  margin-top: 30px;
+}
+
+.comment-margin {
+  padding-top: 10px;
+}
+
+//Admin
+.outreach_check {
+  margin-left: 20px;
+}
